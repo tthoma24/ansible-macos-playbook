@@ -1,7 +1,7 @@
 ---
 
 - name: Ensure mas-cli is installed
-  homebrew:
+  community.general.macports:
     name: mas
     state: present
   when: mas_apps|count > 0
