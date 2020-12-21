@@ -1,0 +1,30 @@
+---
+
+- name: "Customize Full Control Strip."
+  osx_defaults:
+    domain: com.apple.controlstrip
+    key: FullCustomized
+    type: array
+    value:
+      - com.apple.system.group.brightness
+      - com.apple.system.mission-control
+      - com.apple.system.launchpad
+      - com.apple.system.keyboard-brightness
+      - com.apple.system.group.media
+      - com.apple.system.volume
+      - com.apple.system.do-not-disturb
+      - com.apple.system.notification-center
+      - com.apple.system.siri
+  notify: Restart Control Strip
+
+- name: "Customize Mini Control Strip."
+  osx_defaults:
+    domain: com.apple.controlstrip
+    key: MiniCustomized
+    type: array
+    value:
+      - com.apple.system.volume
+      - com.apple.system.brightness
+      - com.apple.system.do-not-disturb
+      - com.apple.system.siri
+  notify: Restart Control Strip

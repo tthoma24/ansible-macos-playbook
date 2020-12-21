@@ -8,3 +8,6 @@
 
 - name: Restart Safari
   shell: osascript -e 'quit app "Safari"' && osascript -e 'tell application "Safari" to activate'
+
+- name: Restart Control Strip
+  shell: killall ControlStrip
