@@ -1,0 +1,33 @@
+---
+
+- name: Install cowsay.
+  community.general.macports:
+    name: cowsay
+    state: present
+  check_mode: no
+
+- name: "port installed cowsay"
+  command: port installed cowsay
+  check_mode: no
+  register: cowsay_return
+
+- name: /opt/local/etc/cowsay/3.04/INSTALL_RECEIPT.json
+  debug:
+    var: cowsay_return.stdout_lines[1]
+
+- name: Look for installed cowsay version number.
+  set_fact:
+    cowsay_version: "{{ cowsay_return.stdout_lines[1] | regex_search('(\\d+\\.\\d+)') }}"
+  check_mode:
+
+- name: "Show something like 3.04"
+  debug:
+    var: cowsay_version
+
+- name: Update local user ansible config to use buffalo.
+  ini_file:
+    path: ~/.ansible.cfg
+    section: defaults
+    option: cow_selection
+    value: default
+    mode: 0644
