@@ -5,15 +5,16 @@ This is the playbook I use after a clean install of MacOS to set everything up.
 ## Roles/Tasks
 
 - Installs Homebrew packages and app casks (Role `homebrew`)
+- Installs MacPorts packages (Role `macports`)
 - Installs App Store apps with [`mas-cli`](https://github.com/mas-cli/mas) (Role `mas`)
 - Modifies MacOS settings (Role `settings`)
 - Changes the user shell, if configured (Role `shell`)
 
 ## Installation
 
-1. Install [Homebrew](https://brew.sh).
-1. Install Python (`brew install python`)
-1. Install Ansible (`pip3 install ansible`)
+1. Install [Homebrew](https://brew.sh) or [MacPorts](https://macports.org).
+1. Install Python (`brew install python`) or (`sudo port install python`)
+1. Install Ansible (`pip3 install ansible`) or (`sudo port install ansible`)
 1. Copy `default.config.yml` to `config.yml` and edit the configuration to your likings.
    - **Don't skip this, otherwise your computer will be provisioned like mine :)**
 1. Run `ansible-playbook main.yml`. Enter your account password when prompted.

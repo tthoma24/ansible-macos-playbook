@@ -1,0 +1,11 @@
+# Packages to install with MacPorts
+#
+# Example:
+#
+# macports_packages:
+#   - bash
+#   - curl
+#   - git
+#   - {name: foo, variant: "+universal+x11" }
+#   - mysql@5.7
+macports_packages: []
