@@ -17,3 +17,60 @@
     type: bool
     value: "{{ dock_show_indicator_lights_for_open_apps|bool }}"
   notify: Restart Dock
+
+- name: Auto re-arrange spaces
+  when: dock_missioncontrol_mruspaces != None
+  osx_defaults:
+    domain: com.apple.dock
+    key: mru-spaces
+    type: bool
+    value: "{{ dock_mc_mruspaces|bool }}"
+  notify: Restart Dock
+
+- name: Bluetooth in Menu Bar
+  when: dock_mb_bt != None
+  osx_defaults:
+    domain: com.apple.controlcenter
+    key: NSStatusItem Visible Bluetooth
+    type: bool
+    value:
+
+- name: AirPlay in Menu Bar
+  when: dock_mb_airplay != None
+  osx_defaults:
+    domain: com.apple.controlcenter
+    key: NSStatusItem Visible AirPlay
+    type: bool
+    value: "{{ dock_mb_airplay|bool }}"
+
+- name: Now Playing in Menu Bar
+  when: dock_mb_nowplaying != None
+  osx_defaults:
+    domain: com.apple.controlcenter
+    key: NSStatusItem Visible NowPlaying
+    type: bool
+    value: "{{ dock_mb_nowplaying|bool }}"
+
+- name: Sound Visible in Menu Bar
+  when: dock_mb_sound != None
+  osx_defaults:
+    domain: com.apple.controlcenter
+    key: NSStatusItem Visible Sound
+    type: bool
+    value: "{{ dock_mb_sound|bool }}"
+
+- name: Spotlight in Menu Bar
+  when: dock_mb_spotlight != None
+  osx_defaults:
+    domain: com.apple.Spotlight
+    key: NSStatusItem Visible Item-0
+    type: bool
+    value: "{{ dock_mb_spotlight|bool }}"
+
+- name: Menu Bar Clock
+  when: dock_mb_clock != None
+  osx_defaults:
+    domain: com.apple.menuextra.clock
+    key: DateFormat
+    type: string
+    value: "{{ dock_mb_clock }}"

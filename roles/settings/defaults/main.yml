@@ -44,3 +44,10 @@ security_airdrop_visibility: null
 
 dock_make_hidden_apps_translucent: null
 dock_show_indicator_lights_for_open_apps: null
+dock_mc_mruspaces: null
+dock_mb_bt: null
+dock_mb_airplay: null
+dock_mb_nowplaying: null
+dock_mb_sound: null
+dock_mb_spotlight: null
+dock_mb_clock: null
