@@ -9,6 +9,11 @@ safari_show_full_url_in_address_bar: null
 safari_open_safe_files_automatically: null
 safari_show_status_bar: null
 safari_show_developer_menu: null
+safari_show_debug_menu: null
+safari_show_webinspector: null
+safari_enable_webkit_extras: null
+safari_enable_donottrack: null
+safari_sha1_crt_insecure: null
 
 system_save_application_state_on_quit: null
 system_expand_save_panel_by_default: null

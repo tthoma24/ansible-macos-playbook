@@ -27,7 +27,7 @@
     value: "{{ safari_show_status_bar }}"
   notify: Restart Safari
 
-- name: "Show status bar ({{ show_developer_menu }})"
+- name: "Show Developer menu ({{ show_developer_menu }})"
   when: safari_show_developer_menu != None
   osx_defaults:
     domain: "{{ safari_defaults_domain }}"
@@ -35,3 +35,53 @@
     type: bool
     value: "{{ safari_show_developer_menu|bool }}"
   notify: Restart Safari
+
+- name: "Enable Debug menu ({{ show_debug_menu }})"
+  when: safari_show_debug_menu != None
+  osx_defaults:
+    domain: com.apple.Safari
+    key: IncludeInternalDebugMenu
+    type: bool
+    value: "{{ safari_show_debug_menu|bool }}"
+  notify: Restart Safari
+
+- name: "Enable Web Inspector ({{ show_webinspector }})"
+  when: safari_show_webinspector != None
+  osx_defaults:
+    - domain: com.apple.Safari
+      key: WebKitDeveloperExtrasEnabledPreferenceKey
+      type: bool
+      value: "{{ safari_show_webinspector|bool }}"
+    - domain: NSGlobalDomain
+      key: WebKitDeveloperExtras
+      type: bool
+      value: "{{ safari_show_webinspector|bool }}"
+  notify: Restart Safari
+
+- name: "Enable WebKit Extras ({{ enable_webkit_extras }})"
+  when: safari_enable_webkit_extras != None
+  osx_defaults:
+    domain: com.apple.Safari
+    key: ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled
+    type: bool
+    value: "{{ safari_enable_webkit_extras|bool }}"
+  notify: Restart Safari
+
+- name: "Send DNT header ({{ enable_donottrack }})"
+  when: safari_enable_donottrack != None
+  osx_defaults:
+    domain: com.apple.Safari
+    key: SendDoNotTrackHTTPHeader
+    type: bool
+    value: "{{ safari_enable_donottrack|bool }}"
+  notify: Restart Safari
+
+- name: "Treat SHA-1 certificates as insecure ({{ safari_sha1_crt_insecure }})"
+  when: safari_sha1_crt_insecure != None
+  osx_defaults:
+    domain: com.apple.Safari
+    key: TreatSHA1CertificatesAsInsecure
+    type: bool
+    value: "{{ safari_sha1_crt_insecure|bool }}"
+  notify: Restart Safari
+
