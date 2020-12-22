@@ -1,0 +1,32 @@
+
+- name: Ask for a password when leaving the screensaver ({{ screensaver_ask_for_password }}).
+  when: screensaver_ask_for_password != None
+  osx_defaults:
+    domain: com.apple.screensaver
+    key: askForPassword
+    type: int
+    value: "{{ screensaver_ask_for_password|int }}"
+
+- name: "Ask for password delay ({{ screensaver_ask_for_password_in_seconds }})"
+  when: screensaver_ask_for_password_in_seconds != None
+  osx_defaults:
+    domain: com.apple.screensaver
+    key: askForPasswordDelay
+    type: float
+    value: "{{ screensaver_ask_for_password_in_seconds|int }}"
+
+- name: "Home Sharing for Media ({{ security_home_sharing }})"
+  when: security_home_sharing != None
+  osx_defaults:
+    domain: com.apple.amp.mediasharingd
+    key: home-sharing-enabled
+    type: bool
+    value: "{{ security_home_sharing|bool }}"
+
+- name: "Airdrop mode ({{ security_airdrop_visibility }})"
+  when: security_airdrop_visibility != None
+  osx_defaults:
+    domain: com.apple.sharingd
+    key: DiscoverableMode
+    type: string
+    value: "{{ security_airdrop_visibility }}"

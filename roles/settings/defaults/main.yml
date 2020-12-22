@@ -31,6 +31,8 @@ trackpad_appexpose: null
 
 screensaver_ask_for_password: null
 screensaver_ask_for_password_in_seconds: null
+security_home_sharing: null
+security_airdrop_visibility: null
 
 dock_make_hidden_apps_translucent: null
 dock_show_indicator_lights_for_open_apps: null
