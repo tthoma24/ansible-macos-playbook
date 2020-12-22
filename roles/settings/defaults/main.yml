@@ -22,7 +22,12 @@ system_show_file_extensions_warning: null
 system_warn_before_emptying_the_trash: null
 system_use_f_keys_as_standard_function_keys: null
 system_index_network_storage_with_spotlight: null
+
 trackpad_tap_to_click: null
+trackpad_rightclick: null
+trackpad_cornerClick: null
+trackpad_naturalscroll: null
+trackpad_appexpose: null
 
 screensaver_ask_for_password: null
 screensaver_ask_for_password_in_seconds: null

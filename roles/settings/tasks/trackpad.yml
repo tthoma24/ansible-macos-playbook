@@ -1,0 +1,75 @@
+---
+
+- name: Enable tap to click ({{ trackpad_tap_to_click }})
+  osx_defaults:
+    domain: "{{ item.domain|default(omit) }}"
+    host: "{{ item.host|default(omit) }}"
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  with_items:
+    - host: currentHost
+      domain: NSGlobalDomain
+      key: com.apple.mouse.tapBehavior
+      type: int
+      value: "{{ trackpad_tap_to_click|int }}"
+    - domain: NSGlobalDomain
+      key: com.apple.mouse.tapBehavior
+      type: int
+      value: "{{ trackpad_tap_to_click|int }}"
+    - domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+      key: Clicking
+      type: int
+      value: "{{ trackpad_tap_to_click|int }}"
+    - domain: com.apple.AppleMultitouchTrackpad
+      key: Clicking
+      type: int
+      value: "{{ trackpad_tap_to_click|int }}"
+
+- name: Enable Right Click ({{ trackpad_rightclick }})
+  osx_defaults:
+    domain: "{{ item.domain|default(omit) }}"
+    host: "{{ item.host|default(omit) }}"
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  with_items:
+    - host: currentHost
+      domain: NSGlobalDomain
+      key: com.apple.trackpad.tapBehavior.trackpadCornerClickBehavior
+      type: int
+      value: "{{ trackpad_rightclick|int }}"
+    - domain: NSGlobalDomain
+      key: com.apple.trackpad.enableSecondaryClick
+      type: bool
+      value: "{{ trackpad_rightclick|bool }}"
+    - domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+      key: TrackpadCornerSecondaryClick
+      type: int
+      value: "{{ trackpad_cornerClick|int }}"
+    - domain: com.apple.AppleMultitouchTrackpad
+      key: TrackpadCornerSecondaryClick
+      type: int
+      value: "{{ trackpad_cornerClick|int }}"
+
+- name: Enable Natural Scrolling ({{ trackpad_naturalscroll }})
+  when: trackpad_naturalscroll != None
+  osx_defaults:
+    - domain: NSGlobalDomain
+      key: com.apple.swipescrolldirection
+      type: bool
+      value: "{{ trackpad_naturalscroll|bool }}"
+    - domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+      key: TrackpadFourFingerVertSwipeGesture
+      type: int
+      value: 2
+
+- name: Enable App Expose gesture ({{ trackpad_appexpose }})
+  when: trackpad_appexpose != None
+  osx_defaults:
+    - domain: com.apple.dock
+      key:  showAppExposeGestureEnabled = 1;
+      type: bool
+      value: "{{ trackpad_appexpose|bool }}"
+  notify: Restart Dock
+
