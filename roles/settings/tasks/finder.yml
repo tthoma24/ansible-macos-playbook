@@ -2,7 +2,7 @@
 
 # see https://brettterpstra.com/2020/12/02/remove-the-proxy-icon-hover-delay-in-big-sur/
 - name: Configure the proxy icon hover delay in Finder
-  when: (finder_proxy_icon_hover_delay != None) 
+  when: (finder_proxy_icon_hover_delay != None)
         and (ansible_facts['distribution'] == "MacOSX")
         and (ansible_facts['distribution_major_version'] == "11")
   osx_defaults:
@@ -11,4 +11,60 @@
     type: float
     value: "{{ finder_proxy_icon_hover_delay|float }}"
   notify: Restart Finder
+
+- name: Show extension warning ({{ system_show_file_extensions_warning }})
+  when: finder_show_file_extensions_warning != None
+  osx_defaults:
+    domain: com.apple.finder
+    key: FXEnableExtensionChangeWarning
+    type: bool
+    value: "{{ finder_show_file_extensions_warning|bool }}"
+  notify: Restart Finder
+
+- name: Warn before emptying the trash ({{ finder_warn_before_emptying_the_trash }})
+  when: finder_warn_before_emptying_the_trash != None
+  osx_defaults:
+    domain: com.apple.finder
+    key: WarnOnEmptyTrash
+    type: bool
+    value: "{{ finder_warn_before_emptying_the_trash|bool }}"
+  notify: Restart Finder
+
+- name: Show Status Bar ({{ finder_show_statusbar }})
+  when: finder_show_statusbar != None
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowStatusBar
+    type: bool
+    value: "{{ finder_show_statusbar|bool }}"
+  notify: Restart Finder
+
+- name: Show Hard Drives on Desktop ({{ finder_show_hdd_desktop }})
+  when: finder_show_hdd_desktop != None
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowHardDrivesOnDesktop
+    type: bool
+    value: "{{ finder_show_hdd_desktop|bool }}"
+  notify: Restart Finder
+
+- name: Show Connected servers on Desktop ({{ finder_show_mounts_desktop }})
+  when: finder_show_mounts_desktop != None
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowMountedServersOnDesktop
+    type: bool
+    value: "{{ finder_show_mounts_desktop|bool }}"
+  notify: Restart Finder
+
+- name: New Finder windows show ({{ finder_new_window_target }})
+  when: finder_new_window_target != None
+  osx_defaults:
+    domain: com.apple.finder
+    key: NewWindowTargetPath
+    type: string
+    value: "{{ finder_new_window_target }}"
+  notify: Restart Finder
+
+
 

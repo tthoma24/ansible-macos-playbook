@@ -42,24 +42,6 @@
     value: "{{ system_expand_print_panel_by_default|bool }}"
   notify: Restart Finder
 
-- name: Show extension warning ({{ system_show_file_extensions_warning }})
-  when: system_show_file_extensions_warning != None
-  osx_defaults:
-    domain: com.apple.finder
-    key: FXEnableExtensionChangeWarning
-    type: bool
-    value: "{{ system_show_file_extensions_warning|bool }}"
-  notify: Restart Finder
-
-- name: Warn before emptying the trash ({{ system_warn_before_emptying_the_trash }})
-  when: system_warn_before_emptying_the_trash != None
-  osx_defaults:
-    domain: com.apple.finder
-    key: WarnOnEmptyTrash
-    type: bool
-    value: "{{ system_warn_before_emptying_the_trash|bool }}"
-  notify: Restart Finder
-
 - name: Use F keys as standard function keys ({{ system_use_f_keys_as_standard_function_keys }})
   when: system_use_f_keys_as_standard_function_keys != None
   osx_defaults:
