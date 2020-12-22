@@ -1,5 +1,21 @@
 ---
 
+- name: Keep windows when quitting an app ({{ system_keep_windows_on_quit }})
+  when: system_keep_windows_on_quit != None
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: NSQuitAlwaysKeepsWindows
+    type: bool
+    value: "({{ system_keep_windows_on_quit|bool }})"
+
+- name: Prefer tabs when opening documents ({{ system_prefer_tabs }})
+  when: system_prefer_tabs != None
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleWindowTabbingMode
+    type: string
+    value: "({{ system_prefer_tabs }})"
+
 - name: Save application states on quit ({{ system_save_application_state_on_quit }})
   when: system_save_application_state_on_quit != None
   osx_defaults:
@@ -61,18 +77,29 @@
     type: bool
     value: "{{ system_index_network_storage_with_spotlight|bool }}"
 
-- name: Ask for a password when leaving the screensaver ({{ screensaver_ask_for_password }}).
-  when: screensaver_ask_for_password != None
+- name: Play sound on volume change  ({{ system_volume_feedback_sound }})
+  become: true
+  when: system_volume_feedback_sound != None
   osx_defaults:
-    domain: com.apple.screensaver
-    key: askForPassword
-    type: int
-    value: "{{ screensaver_ask_for_password|int }}"
+    - domain: "Apple Global Domain"
+      key: com.apple.sound.beep.feedback
+      type: bool
+      value: "{{ system_volume_feedback_sound|bool }}"
+    - domain: "Apple Global Domain"
+      key: com.apple.sound.uiaudio.enabled
+      type: bool
+      value: "{{ system_volume_feedback_sound|bool }}"
 
-- name: "Ask for password delay ({{ screensaver_ask_for_password_in_seconds }})"
-  when: screensaver_ask_for_password_in_seconds != None
-  osx_defaults:
-    domain: com.apple.screensaver
-    key: askForPasswordDelay
-    type: float
-    value: "{{ screensaver_ask_for_password_in_seconds|int }}"
+- name: Get startup sound status
+  become: true
+  when: system_startup_sound != None
+  shell: nvram StartupMute
+  register: StartupMute_result
+  changed_when: false
+  failed_when: false
+  check_mode: no
+
+- name: Play startup sound ({{ system_startup_sound }})
+  shell: nvram StartupMute="{{ system_startup_sound }}"
+  become: true
+  when: system_startup_sound != None and (StartupMute_result.failed or (system_startup_sound not in StartupMute_result.stdout))
