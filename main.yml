@@ -15,7 +15,13 @@
   roles:
     - role: homebrew
       tags: [homebrew]
+    - role: macports
+      tags: [macports]
+    - role: cowsay
+      tags: [cowsay]
     - role: mas
       tags: [mas]
+    - role: apps
+      tags: [apps]
     - role: settings
       tags: [settings]
