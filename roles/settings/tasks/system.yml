@@ -1,12 +1,12 @@
 ---
 
-- name: Keep windows when quitting an app ({{ system_keep_windows_on_quit }})
-  when: system_keep_windows_on_quit != None
+- name: Save application states on quit ({{ save_application_state_on_quit }})
+  when: save_application_state_on_quit != None
   osx_defaults:
     domain: NSGlobalDomain
     key: NSQuitAlwaysKeepsWindows
     type: bool
-    value: "({{ system_keep_windows_on_quit|bool }})"
+    value: "({{ system_save_application_state_on_quit|bool }})"
 
 - name: Prefer tabs when opening documents ({{ system_prefer_tabs }})
   when: system_prefer_tabs != None
@@ -15,14 +15,6 @@
     key: AppleWindowTabbingMode
     type: string
     value: "({{ system_prefer_tabs }})"
-
-- name: Save application states on quit ({{ system_save_application_state_on_quit }})
-  when: system_save_application_state_on_quit != None
-  osx_defaults:
-    domain: com.apple.systempreferences
-    key: NSQuitAlwaysKeepsWindows
-    type: bool
-    value: "{{ system_save_application_state_on_quit|bool }}"
 
 - name: Expand save panel by default ({{ system_expand_save_panel_by_default }})
   when: system_expand_save_panel_by_default != None
