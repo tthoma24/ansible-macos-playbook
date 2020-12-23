@@ -34,15 +34,14 @@
     type: "{{ item.type }}"
     value: "{{ item.value }}"
   with_items:
-    - domain: NSGlobalDomain
+    - domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
       key: com.apple.trackpad.enableSecondaryClick
       type: bool
       value: "{{ trackpad_rightclick|bool }}"
-    - host: currentHost
-      domain: NSGlobalDomain
+    - domain: com.apple.AppleMultitouchTrackpad
       key: com.apple.trackpad.tapBehavior.trackpadCornerClickBehavior
-      type: int
-      value: "{{ trackpad_rightclick_behavior|int }}"
+      type: bool
+      value: "{{ trackpad_rightclick|bool }}"
     - domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
       key: TrackpadCornerSecondaryClick
       type: int
