@@ -33,7 +33,7 @@ system_startup_sound: null
 
 trackpad_tap_to_click: null
 trackpad_rightclick: null
-trackpad_cornerClick: null
+trackpad_rightclick_behavior: null
 trackpad_naturalscroll: null
 trackpad_appexpose: null
 

@@ -34,23 +34,23 @@
     type: "{{ item.type }}"
     value: "{{ item.value }}"
   with_items:
-    - host: currentHost
-      domain: NSGlobalDomain
-      key: com.apple.trackpad.tapBehavior.trackpadCornerClickBehavior
-      type: int
-      value: "{{ trackpad_rightclick|int }}"
     - domain: NSGlobalDomain
       key: com.apple.trackpad.enableSecondaryClick
       type: bool
       value: "{{ trackpad_rightclick|bool }}"
+    - host: currentHost
+      domain: NSGlobalDomain
+      key: com.apple.trackpad.tapBehavior.trackpadCornerClickBehavior
+      type: int
+      value: "{{ trackpad_rightclick_behavior|int }}"
     - domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
       key: TrackpadCornerSecondaryClick
       type: int
-      value: "{{ trackpad_cornerClick|int }}"
+      value: "{{ trackpad_rightclick_behavior|int }}"
     - domain: com.apple.AppleMultitouchTrackpad
       key: TrackpadCornerSecondaryClick
       type: int
-      value: "{{ trackpad_cornerClick|int }}"
+      value: "{{ trackpad_rightclick_behavior|int }}"
 
 - name: Enable Natural Scrolling ({{ trackpad_naturalscroll }})
   when: trackpad_naturalscroll != None
@@ -59,10 +59,6 @@
       key: com.apple.swipescrolldirection
       type: bool
       value: "{{ trackpad_naturalscroll|bool }}"
-    - domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
-      key: TrackpadFourFingerVertSwipeGesture
-      type: int
-      value: 2
 
 - name: Enable App Expose gesture ({{ trackpad_appexpose }})
   when: trackpad_appexpose != None
