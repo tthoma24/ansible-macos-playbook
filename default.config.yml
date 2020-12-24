@@ -19,7 +19,7 @@ dock_mb_airplay: no
 dock_mb_nowplaying: no
 dock_mb_sound: no
 dock_mb_spotlight: no
-dock_mb_clock: null
+dock_mb_clock: "EEE MMM d  j:mm a" # Clock format, default ex. Wed Jul 17 10:16 AM
 
 safari_show_full_url_in_address_bar: yes
 safari_open_safe_files_automatically: yes
