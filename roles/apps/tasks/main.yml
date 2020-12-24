@@ -3,8 +3,8 @@
 - name: Install non-App Store apps
   tasks:
     - shell: macapps.sh
-     args:
-      chdir: "{{role_path}}"
-      executable: /bin/bash
-     register: shellout
+      args:
+        chdir: "{{role_path}}"
+        executable: /bin/bash
+      register: shellout
     - debug: var=shellout.stdout
