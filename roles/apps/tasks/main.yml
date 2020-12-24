@@ -6,4 +6,4 @@
       chdir: "{{role_path}}"
       executable: /bin/bash
     register: shellout
-  debug: var=shellout.stdout
+- debug: var=shellout.stdout
