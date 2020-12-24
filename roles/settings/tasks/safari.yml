@@ -48,11 +48,11 @@
 - name: "Show Web Inspector ({{ show_webinspector }})"
   when: safari_show_webinspector != None
   osx_defaults:
-    - domain: "{{ safari_defaults_domain }}"
+    domain: "{{ safari_defaults_domain }}"
       key: WebKitDeveloperExtrasEnabledPreferenceKey
       type: bool
       value: "{{ safari_show_webinspector|bool }}"
-    - domain: NSGlobalDomain
+    domain: NSGlobalDomain
       key: WebKitDeveloperExtras
       type: bool
       value: "{{ safari_show_webinspector|bool }}"
