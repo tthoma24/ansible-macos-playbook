@@ -53,6 +53,8 @@ screensaver_ask_for_password_in_seconds: 5
 security_home_sharing: no
 security_airdrop_visibility: Everyone # Everyone, Contacts Only, or Off
 
+shell_path: /bin/zsh # zsh is now default; bash is deprecated
+
 dotfiles_repo: "https://github.com/username/dotfiles.git"
 dotfiles_repo_version: master
 dotfiles_repo_accept_hostkey: false # Add the hostkey for the repo url if not already added.
