@@ -1,7 +1,7 @@
 ---
 
 - name: Install non-App Store apps
-  tasks:
+- tasks:
     - shell: macapps.sh
       args:
         chdir: "{{role_path}}"
