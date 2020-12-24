@@ -79,7 +79,7 @@
 - name: "Treat SHA-1 certificates as insecure ({{ safari_sha1_crt_insecure }})"
   when: safari_sha1_crt_insecure != None
   osx_defaults:
-    domain: c"{{ safari_defaults_domain }}"
+    domain: "{{ safari_defaults_domain }}"
     key: TreatSHA1CertificatesAsInsecure
     type: bool
     value: "{{ safari_sha1_crt_insecure|bool }}"
