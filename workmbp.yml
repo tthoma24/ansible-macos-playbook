@@ -1,0 +1,188 @@
+---
+computername: "Teddy's Work MacBook Pro"
+hostname: tthoma24-bh-mbp
+
+finder_proxy_icon_hover_delay: 0
+finder_show_file_extensions_warning: yes
+finder_warn_before_emptying_the_trash: yes
+finder_show_statusbar: yes
+finder_show_hdd_desktop: yes
+finder_show_mounts_desktop: yes
+finder_new_window_target: file:///Users/tthoma24
+
+dock_make_hidden_apps_translucent: no
+dock_show_indicator_lights_for_open_apps: yes
+dock_mc_mruspaces: yes
+dock_mb_bt: no
+dock_mb_airplay: no
+dock_mb_nowplaying: no
+dock_mb_sound: no
+dock_mb_spotlight: no
+dock_mb_clock: "EEE MMM d  j:mm a"
+
+safari_show_full_url_in_address_bar: yes
+safari_open_safe_files_automatically: yes
+safari_show_status_bar: yes
+safari_show_developer_menu: yes
+safari_show_debug_menu: no
+safari_show_webinspector: yes
+safari_enable_webkit_extras: yes
+safari_enable_donottrack: yes
+safari_sha1_crt_insecure: yes
+
+system_prefer_tabs: always
+system_save_application_state_on_quit: no
+system_expand_save_panel_by_default: yes
+system_expand_print_panel_by_default: yes
+system_show_file_extensions_warning: yes
+system_warn_before_emptying_the_trash: yes
+system_use_f_keys_as_standard_function_keys: yes
+system_index_network_storage_with_spotlight: no
+system_volume_feedback_sound: yes
+system_startup_sound: "%00"
+
+trackpad_tap_to_click: yes
+trackpad_rightclick: no # tap with two fingers, set to no for next option
+trackpad_rightclick_behavior: 2
+trackpad_naturalscroll: no
+trackpad_appexpose: yes
+
+screensaver_ask_for_password: yes
+screensaver_ask_for_password_in_seconds: 5
+security_home_sharing: yes
+security_airdrop_visibility: "Contacts Only" # Everyone, Contacts Only, or Off
+
+shell_path: /opt/local/bin/bash
+
+dotfiles_repo: "https://github.com/tthoma24/dotfiles.git"
+dotfiles_repo_version: main
+dotfiles_repo_accept_hostkey: true # Add the hostkey for the repo url if not already added.
+dotfiles_repo_local_destination: "~/src/dotfiles" # The local path where the dotfiles_repo will be cloned.
+dotfiles_home: "~"
+dotfiles_files: #Which files from the dotfiles repository should be linked to the `dotfiles_home`.
+  - .anyconnect
+  - .atom
+  - .aws
+  - .bash_aliases
+  - .bashrc
+  - .config
+  - .emacs
+  - .forward
+  - .git
+  - .gitconfig
+  - .gitignore
+  - .gitignore_global
+  - .gitpassport
+  - .glacieruploaderrc
+  - .gnupg
+  - .hgignore_global
+  - .pivman
+  - .profile
+  - .sheepshaver_prefs
+  - .tmux.conf
+  - .viminfo
+  - .wget-hsts
+  - .wgetrc
+  - .wireshark
+  - .xlog
+  - .yubioath
+  - .zephyr.subs
+
+macports_packages:
+  - asciidoc
+  - automake
+  - bash
+  - bash-completion
+  - bsdmake
+  - cmake
+  - cmake
+  - coreutils
+  - cowsay
+  - desktop-file-utils
+  - emacs
+  - fortune
+  - gawk
+  - gengetopt
+  - gnetcat
+  - gperf
+  - help2man
+  - inetutils
+  - jq
+  - kerberos5
+  - lesspipe
+  - libgcrypt
+  - libicns
+  - lzip
+  - makepasswd
+  - mas
+  - minicom
+  - mosh
+  - mtr
+  - nmap
+  - openconnect
+  - p7zip
+  - parallel
+  - pstree
+  - py-future
+  - py37-appdirs
+  - py37-certifi
+  - py37-lxml
+  - py37-m2crypto
+  - py37-pip
+  - py37-requests
+  - py37-virtualenv
+  - py38-awscli
+  - py38-beautifulsoup4
+  - py38-boto
+  - py38-botocore
+  - py38-certifi
+  - py38-cython
+  - py38-docutils
+  - py38-ipaddress
+  - py38-lxml
+  - py38-pip
+  - py38-requests
+  - py38-rsa
+  - py38-virtualenv
+  - rb-rubygems
+  - remctl
+  - ruby
+  - scons
+  - smartmontools
+  - sudo
+  - tcping
+  - tcptraceroute
+  - texinfo
+  - texlive-basic
+  - tmux
+  - tmux-pasteboard
+  - wget
+  - wol
+  - xmlto
+
+mas_apps:
+  - { name: Developer, id: 640199958 }
+  - { name: Keynote, id: 409183694 }
+  - { name: Apple Remote Desktop, id: 409907375 }
+  - { name: Microsoft Remote Desktop, id: 1295203466 }
+  - { name: Apple Configurator 2, id: 1037126344 }
+  - { name: Trello, id: 1278508951 }
+  - { name: JSONPeep, id: 1458969831 }
+  - { name: Telegram, id: 747648890 }
+  - { name: GarageBand, id:682658836 }
+  - { name: The Unarchiver, id: 425424353 }
+  - { name: WiFi Explorer, id: 494803304 }
+  - { name: Server, id: 883878097 }
+  - { name: Adblock Plus, id: 1432731683 }
+  - { name: Twitter, id: 1482454543 }
+  - { name: Numbers, id:409203825 }
+  - { name: Speedtest, id:1153157709 }
+  - { name: Pages, id:409201541 }
+  - { name: iMovie, id: 408981434 }
+  - { name: Telephone, id: 406825478 }
+  - { name: Musicnotes, id: 1025073421 }
+  - { name: Kiwi for Gmail Lite, id: 1006184923 }
+  - { name: Slack, id: 803453959 }
+  - { name: Deliveries, id: 290986013 }
+  - { name: Mactracker, id: 430255202 }
+  - { name: Yubico Authenticator, id: 1497506650 }
