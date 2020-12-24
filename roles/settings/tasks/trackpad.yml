@@ -54,17 +54,17 @@
 - name: Enable Natural Scrolling ({{ trackpad_naturalscroll }})
   when: trackpad_naturalscroll != None
   osx_defaults:
-    - domain: NSGlobalDomain
-      key: com.apple.swipescrolldirection
-      type: bool
-      value: "{{ trackpad_naturalscroll|bool }}"
+    domain: NSGlobalDomain
+    key: com.apple.swipescrolldirection
+    type: bool
+    value: "{{ trackpad_naturalscroll|bool }}"
 
 - name: Enable App Expose gesture ({{ trackpad_appexpose }})
   when: trackpad_appexpose != None
   osx_defaults:
-    - domain: com.apple.dock
-      key:  showAppExposeGestureEnabled = 1;
-      type: bool
-      value: "{{ trackpad_appexpose|bool }}"
+    domain: com.apple.dock
+    key:  showAppExposeGestureEnabled = 1;
+    type: bool
+    value: "{{ trackpad_appexpose|bool }}"
   notify: Restart Dock
 
