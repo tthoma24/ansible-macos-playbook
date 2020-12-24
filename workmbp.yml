@@ -103,6 +103,8 @@ macports_packages:
   - fortune
   - gawk
   - gengetopt
+  - git
+  - gh
   - gnetcat
   - gperf
   - help2man
@@ -119,6 +121,7 @@ macports_packages:
   - mosh
   - mtr
   - nmap
+  - nodejs12
   - openconnect
   - p7zip
   - parallel
@@ -156,6 +159,7 @@ macports_packages:
   - texlive-basic
   - tmux
   - tmux-pasteboard
+  - tree
   - wget
   - wol
   - xmlto
