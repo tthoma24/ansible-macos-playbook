@@ -55,14 +55,15 @@
   become: true
   when: system_volume_feedback_sound != None
   osx_defaults:
-    - domain: "Apple Global Domain"
-      key: com.apple.sound.beep.feedback
-      type: bool
-      value: "{{ system_volume_feedback_sound|bool }}"
-    - domain: "Apple Global Domain"
-      key: com.apple.sound.uiaudio.enabled
-      type: bool
-      value: "{{ system_volume_feedback_sound|bool }}"
+    domain: "Apple Global Domain"
+    key: com.apple.sound.beep.feedback
+    type: bool
+    value: "{{ system_volume_feedback_sound|bool }}"
+  osx_defaults:
+    domain: "Apple Global Domain"
+    key: com.apple.sound.uiaudio.enabled
+    type: bool
+    value: "{{ system_volume_feedback_sound|bool }}"
 
 - name: Get startup sound status
   become: true
