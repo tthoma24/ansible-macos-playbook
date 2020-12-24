@@ -1,5 +1,6 @@
 ---
+roles:
+  - src: geerlingguy.dotfiles
 
-- src: geerlingguy.dotfiles
-- collections:
+collections:
   - name: community.general
