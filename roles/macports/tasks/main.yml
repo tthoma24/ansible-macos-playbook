@@ -3,6 +3,7 @@
 - name: Update Macports and the ports tree
   community.general.macports:
     selfupdate: yes
+  become: yes
 
 - name: Install a list of ports
   community.general.macports:
@@ -11,3 +12,4 @@
     variant: "{{ item.variant | default(omit) }}"
   loop: "{{ macports_packages }}"
   when: macports_packages|default([])|count > 0
+  become: yes
