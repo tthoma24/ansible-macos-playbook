@@ -1,4 +1,5 @@
 ---
 
-collections:
-- name: community.general
+- src: geerlingguy.dotfiles
+- collections:
+  - name: community.general

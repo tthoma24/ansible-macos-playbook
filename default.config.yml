@@ -53,6 +53,17 @@ screensaver_ask_for_password_in_seconds: 5
 security_home_sharing: no
 security_airdrop_visibility: Everyone # Everyone, Contacts Only, or Off
 
+dotfiles_repo: "https://github.com/username/dotfiles.git"
+dotfiles_repo_version: master
+dotfiles_repo_accept_hostkey: false # Add the hostkey for the repo url if not already added.
+dotfiles_repo_local_destination: "/path/to/dotfiles" # The local path where the dotfiles_repo will be cloned.
+dotfiles_home: "~"
+dotfiles_files: #Which files from the dotfiles repository should be linked to the `dotfiles_home`.
+  - .zshrc
+  - .gitignore
+  - .inputrc
+  - .vimrc
+
 homebrew_taps:
   - homebrew/core
   - homebrew/cask

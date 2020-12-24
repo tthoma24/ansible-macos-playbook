@@ -25,3 +25,5 @@
       tags: [apps]
     - role: settings
       tags: [settings]
+    - role: geerlingguy.dotfiles
+      tags: [dotfiles]
