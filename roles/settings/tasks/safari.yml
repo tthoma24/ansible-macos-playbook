@@ -48,15 +48,20 @@
 - name: "Show Web Inspector ({{ show_webinspector }})"
   when: safari_show_webinspector != None
   osx_defaults:
-    domain: "{{ safari_defaults_domain }}"
-    key: WebKitDeveloperExtrasEnabledPreferenceKey
-    type: bool
-    value: "{{ safari_show_webinspector|bool }}"
-  osx_defaults:
-    domain: NSGlobalDomain
-    key: WebKitDeveloperExtras
-    type: bool
-    value: "{{ safari_show_webinspector|bool }}"
+    domain: "{{ item.domain|default(omit) }}"
+    host: "{{ item.host|default(omit) }}"
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  with_items:
+    - domain: "{{ safari_defaults_domain }}"
+      key: WebKitDeveloperExtrasEnabledPreferenceKey
+      type: bool
+      value: "{{ safari_show_webinspector|bool }}"
+    - domain: NSGlobalDomain
+      key: WebKitDeveloperExtras
+      type: bool
+      value: "{{ safari_show_webinspector|bool }}"
   notify: Restart Safari
 
 - name: "Enable WebKit Extras ({{ enable_webkit_extras }})"
