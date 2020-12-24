@@ -17,7 +17,7 @@ This is the playbook I use after a clean install of macOS to set everything up.
 1. Install Ansible (`pip3 install ansible`) or (`sudo port install py38-ansible`)
 1. Copy `default.config.yml` to `config.yml` and edit the configuration to your likings.
    - **Don't skip this, otherwise your computer will be provisioned like mine :)**
-1. Install external roles with `ansible-galaxy collection install -r roles/requirements.yml`
+1. Install external roles with `ansible-galaxy install -r roles/requirements.yml`
 1. Run `ansible-playbook main.yml`. Enter your account password when prompted.
    - If you have a configuration stored elsewhere (e.g. in a dotfiles folders), run `ansible-playbook main.yml --extra-vars=@/path/to/my/config.yml`
 
