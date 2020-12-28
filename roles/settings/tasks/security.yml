@@ -20,8 +20,8 @@
   osx_defaults:
     domain: com.apple.amp.mediasharingd
     key: home-sharing-enabled
-    type: bool
-    value: "{{ security_home_sharing|bool }}"
+    type: int
+    value: "{{ security_home_sharing|int }}"
 
 - name: "Airdrop mode ({{ security_airdrop_visibility }})"
   when: security_airdrop_visibility != None
