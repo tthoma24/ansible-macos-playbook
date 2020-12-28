@@ -1,12 +1,12 @@
 ---
 
-- name: Save application states on quit ({{ save_application_state_on_quit }})
-  when: save_application_state_on_quit != None
-  osx_defaults:
-    domain: NSGlobalDomain
-    key: NSQuitAlwaysKeepsWindows
-    type: bool
-    value: "({{ system_save_application_state_on_quit|bool }})"
+#- name: Save application states on quit ({{ save_application_state_on_quit }})
+#  when: system_save_application_state_on_quit != None
+#  osx_defaults:
+#    domain: NSGlobalDomain
+#    key: NSQuitAlwaysKeepsWindows
+#    type: bool
+#    value: "({{ system_save_application_state_on_quit }})"
 
 - name: Prefer tabs when opening documents ({{ system_prefer_tabs }})
   when: system_prefer_tabs != None
