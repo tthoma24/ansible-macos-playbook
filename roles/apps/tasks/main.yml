@@ -1,10 +1,11 @@
 ---
 
 - name: Install non-App Store apps
-  shell: macapps.sh
+  shell: "{{role_path}}/files/macapps.sh"
   args:
     chdir: "{{role_path}}"
     executable: /bin/bash
   register: shellout
-  
+  become: yes
+
 - debug: var=shellout.stdout

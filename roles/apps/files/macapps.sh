@@ -78,7 +78,7 @@ installApp() {
 ###############################
 installApp "dmg" "Firefox" "Firefox.app" "http://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-US" "" "" ""
 installApp "dmg" "Chrome" "Google Chrome.app" "https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg" "" "" ""
-installApp "dmg" "TorBrowser" "TorBrowser.app" "https://www.torproject.org/dist/torbrowser/8.0.4/TorBrowser-8.0.4-osx64_en-US.dmg" "" "" ""
+installApp "dmg" "TorBrowser" "Tor Browser.app" "https://www.torproject.org/dist/torbrowser/10.0.7/TorBrowser-10.0.7-osx64_en-US.dmg" "" "" ""
 installApp "zip" "GitHub" "GitHub Desktop.app" "https://central.github.com/deployments/desktop/desktop/latest/darwin" "" "" ""
 installApp "zip" "Atom" "Atom.app" "https://atom.io/download/mac" "" "" ""
 installApp "dmg" "Android Std" "Android Studio.app" "https://redirector.gvt1.com/edgedl/android/studio/install/4.1.1.0/android-studio-ide-201.6953283-mac.dmg" "" "noupdate" ""
@@ -86,7 +86,7 @@ installApp "dmg" "Docker" "Docker.app" "https://download.docker.com/mac/stable/D
 installApp "dmg" "BBEdit" "BBEdit.app" "https://s3.amazonaws.com/BBSW-download/BBEdit_13.5.3.dmg" "" "" ""
 installApp "tar" "FileZilla" "FileZilla.app" "https://download.filezilla-project.org/client/FileZilla_latest_macosx-x86.app.tar.bz2" "" "" ""
 installApp "dmg" "Viscosity" "Viscosity.app" "http://www.sparklabs.com/downloads/Viscosity.dmg" "" "" ""
-installApp "zip" "coconutBattery" "coconutBattery.app" "http://www.coconut-flavour.com/downloads/coconutBattery_3_1_2.zip" "" "" ""
+installApp "zip" "coconutBattery" "coconutBattery.app" "https://coconut-flavour.com/downloads/coconutBattery_latest.zip" "" "" ""
 installApp "zip" "Flux" "Flux.app" "https://justgetflux.com/mac/Flux.zip" "" "" "build"
 installApp "zip" "Duet" "duet.app" "http://www.duetdisplay.com/mac" "" "" ""
 installApp "dmg" "Spotify" "Spotify.app" "http://download.spotify.com/Spotify.dmg" "" "" ""
